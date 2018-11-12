@@ -1,0 +1,98 @@
+---
+header-includes:
+   - \usepackage{eso-pic,graphicx,transparent, xwatermark, xcolor, pdflscape, lscape, blindtext, tikz}
+output:
+  pdf_document
+geometry: vcentering,landscape,a4paper,
+            top=1.54cm,bottom=1.54cm,
+            left=2.04cm,right=2.04cm
+fontfamily: arev
+---
+
+\fontsize{16}{18}
+
+\newsavebox\mybox
+\savebox\mybox{\tikz[color=red!20,opacity=0.3]\node{\texttransparent{0.2}{\includegraphics{imagens/marcadaguamachadodeassis.png}}};}
+\newwatermark*[
+  allpages,
+  angle=0,
+  scale=2,
+  xpos=-2,
+  ypos=15
+]{\usebox\mybox}
+
+
+
+
+```{r eval=FALSE, include=FALSE}
+Primeira tentativa usei
+\newwatermark*[allpages,color=red!20,angle=45,scale=4,xpos=0,ypos=0]{IV SER 2019}
+
+#SE newwatermark* a marca fica por cima, sem o * fica por baixo
+#O comando pode alterar a transparencia da cor vermelha
+#color=red!xx
+#o tamanho da letra: scale=x
+```
+
+```{r eval=FALSE, include=FALSE}
+name=c("Fulano de tal fã do autor")
+i=66
+
+```
+
+```{r echo=FALSE}
+name <- presenca$name[i]
+cod=presenca$cod[i]
+```
+
+\thispagestyle{empty} 
+\begin{minipage}{\textwidth}
+			\includegraphics[width=\linewidth]{imagens/cabecalhodom-casmurro.png}
+
+			\sffamily
+			\bigskip
+			\bigskip
+\end{minipage}
+
+
+\begin{center}
+				{\Huge \textbf{CERTIFICADO}}\\
+				\bigskip
+				\bigskip
+			\end{center}
+
+
+\begin{center}
+				\begin{minipage}{0.8\textwidth}
+					{\Large Certificamos que \emph{`r name`}\ esteve presente no 
+				 	\texttt{Lançamento do livro "Dom Casmurro"},  realizado em \texttt{05 de dezembro de 1899} na cidade de 
+					\texttt{Paris}, na qualidade de \texttt{visitante}.}
+				\end{minipage}
+			\end{center}
+			
+			
+
+	\begin{center}
+    	\vspace{1.2cm}
+    	\begin{minipage}
+{\textwidth}
+      \center
+			\includegraphics[width=\textwidth]{imagens/assinaturamachado.png}
+			\end{minipage}
+
+			
+				\Large {\rule{7.0cm}{0.5pt}\\
+				\texttt{Machado de Assis}\\
+				Autor de Dom Casmurro\\}
+				\vspace{0.5cm}
+			\end{center}	
+			
+1.05121899.`r cod`
+
+\begin{minipage}
+{\textwidth}
+			\includegraphics[width=\textwidth]{imagens/apoiomachado.png}
+
+\end{minipage}
+
+

@@ -1,24 +1,27 @@
 
+## Packages
+library(knitr)
+library(rmarkdown)
+library(tidyverse)
+library(stringr)
+library(here)
 
 
-gerar_certificados <- function(planilha,pasta_certificado,modelocertificado) {
+gerar_certificados <- function(listadepresenca,modelocertificado) {
 
-  presenca <- read.csv2(planilha, stringsAsFactors = FALSE, encoding = "UTF-8" )
+  ## Loop
+  for (i in 1:ncol(listadepresenca)){
+    presenca[,i]<-iconv(listadepresenca[,i], "latin1", "UTF-8")}
 
   ## Loop
   for (i in 1:nrow(presenca)){
 
-    rmarkdown::render(input = modelocertificado,
-                      output_format = "pdf_document",
-                      output_file = paste("Certificado ", presenca$name[i], ".pdf", sep=""),
-                      output_dir = pasta_certificado,
-                      encoding = "utf-8")
+    rmarkdown::render(input = paste(modelocertificado),
+                      output_format = iconv("pdf_document", "latin1", "UTF-8"),
+                      output_file = paste("Certificado", i, ".pdf", sep=''),
+                      output_dir = "doc",
+                      encoding="UTF-8")
   }
-
-  for(i in 1:nrow(presenca )){print(paste(presenca$email[i], ",", sep=""))}
-
-
-}
-
+  }
 
 

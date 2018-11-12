@@ -1,0 +1,140 @@
+---
+output:
+  pdf_document
+header-includes: 
+ - \usepackage[brazil]{babel} \usepackage{eso-pic,graphicx,transparent, xcolor, pdflscape, lscape, blindtext, tikz} \usepackage[utf8]{inputenc} \usepackage[printwatermark]{xwatermark}
+geometry: vcentering,landscape,a4paper,
+            top=1.0cm,bottom=1.0cm,
+            left=1.04cm,right=1.04cm
+fontfamily: arev
+---
+
+
+
+```{r setup, include=FALSE}
+options(Encoding="UTF-8")
+knitr::opts_chunk$set(echo = TRUE)
+# ref: http://latex-exemplo.blogspot.com/2015/11/modelo-latex-para-certificados.html
+# ref: https://rmarkdown.rstudio.com/articles_mail_merge.html
+```
+
+
+```{r eval=FALSE, include=FALSE}
+#Para o adequado funcionamento deste arquivo
+#Deve ser fornecido os dados dos participantes
+#Deve ser organizado uma pasta imagens contendo os seguintes arquivos nomeados desta forma, observe o tamanho das imagens e procure substituir pelas suas com medidas equivalentes:
+  
+  1. marcadagua.png  (imagem que servirá como plano de fundo)
+
+  2. cabecalho.png (imagem de cabeçalho, deve conter o logo do evento, no caso de R-ladies colocamos o sticker)
+  
+  3. assinatura.png (imagem com a assinatura da coordenação do evento)
+  
+  4. qrcodeRladies.png (imagem do qrcode para validação do certificado, optamos por direcionar à pasta de certificados)
+  
+  5. apoio.png (imagem da barra de apoiadores)
+  
+  Obs: os arquivos podem ser jpg ou png mas para isso deve ser atualizado neste documento se ficar diferente do exposto aqui.
+```
+
+```{r eval=FALSE, include=FALSE}
+presenca=read.csv2("ListaPresenca.csv")
+i=2
+```
+
+
+```{r echo=FALSE}
+name <- presenca$name[i]
+funcao <- presenca$funcao[i]
+evento=presenca$evento[i]
+ch=presenca$ch[i]
+data_evento=presenca$data_evento[i]
+instituicao=presenca$instituicao[i]
+cidade=presenca$cidade[i]
+coordenador=presenca$coordenador[i]
+cod=presenca$cod[i]
+```
+
+\fontsize{15}{18}
+
+\newsavebox\mybox
+\savebox\mybox{\tikz[opacity=0.3]\node{\texttransparent{0.2}{\includegraphics{imagens/marcadagua.png}}};}
+\newwatermark[
+  allpages,
+  angle=0,
+  scale=1.8,
+  xpos=-2,
+  ypos=15
+]{\usebox\mybox}
+
+
+
+
+
+```{r eval=FALSE, include=FALSE}
+name=c("Lady da Silva Sauro")
+funcao=c("participante")
+evento=c("II meetup R-Ladies Niterói")
+ch=c("2h")
+data_evento=c("13 de novembro de 2018")
+instituicao=c("Universidade Federal Fluminense")
+cidade=c("Niterói-RJ")
+coordenador=c("Nome do coordenador")
+
+cod=66
+
+```
+
+
+
+\thispagestyle{empty} 
+\begin{center}
+\begin{minipage}{\textwidth}
+      \centering
+			\includegraphics[width=0.18\textwidth]{imagens/cabecalho.png}
+
+			\sffamily
+			\bigskip
+\end{minipage}
+\end{center}
+
+\begin{center}
+				{\Huge \textbf{CERTIFICADO}}\\
+				\bigskip
+				\bigskip
+			\end{center}
+
+
+\begin{center}
+				\begin{minipage}{0.8\textwidth}
+					{\Large Certificamos que {\bfseries{`r name`}} esteve presente no 
+				 	{\bfseries{`r evento`}}, com carga horária de \texttt{`r ch`},  realizado em \texttt{`r data_evento`} na \texttt{`r instituicao`}, cidade de 
+					\texttt{`r cidade`}, na qualidade de \texttt{`r funcao`}.}
+				\end{minipage}
+			\end{center}
+			
+			
+
+	\begin{center}
+    	\vspace{1.2cm}
+    	\begin{minipage}
+{\textwidth}
+      \center
+			\includegraphics[width=0.5\textwidth]{imagens/assinatura.png}
+			\end{minipage}
+
+			
+				\Large {\rule{7.0cm}{0.5pt}\\
+				\texttt{`r coordenador`}\\
+				Coordenação Geral\\}
+				\vspace{0.5cm}
+			\end{center}	
+
+\begin{minipage}{.1\textwidth}			
+\scriptsize{2.13112018.`r cod`}
+\includegraphics[width=\textwidth]{imagens/qrcodeRladies.png}
+\end{minipage}
+\begin{minipage}{.9\textwidth}
+			\includegraphics[width=\textwidth]{imagens/apoio.png}
+\end{minipage}
+
