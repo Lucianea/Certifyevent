@@ -115,7 +115,7 @@ cod=66
 			
 			
 
-	\begin{center}
+\begin{center}
     	\vspace{1.2cm}
     	\begin{minipage}
 {\textwidth}
