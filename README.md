@@ -8,4 +8,4 @@ Equipe de trabalho: Profa. Luciane Alcoforado/UFF e Prof. Steven Dutt Ross/UNIRI
 
 Início do projeto: agosto de 2018
 
-
+devtools::install_github('Lucianea/Certifyevent')
