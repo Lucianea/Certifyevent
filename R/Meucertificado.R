@@ -1,11 +1,4 @@
 
-## Packages
-library(knitr)
-library(rmarkdown)
-library(tidyverse)
-library(stringr)
-library(here)
-
 
 gerar_certificados <- function(listadepresenca,modelocertificado) {
 
