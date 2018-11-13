@@ -4,8 +4,7 @@ Title: Pacote para gerar certificados
 Version: 0.1.0
 Author: Luciane Alcoforado, Steven Ross
 Maintainer: Luciane Alcoforado <lucianea@id.uff.br>
-Description: Pacote para criacao de Modelo de Certificado
-    Use four spaces when indenting paragraphs.
+Description: Pacote para criacao de Modelo de Certificado.
 Depends: R (>= 3.5.0), rmarkdown, knitr
 License: CC BY
 Encoding: UTF-8
