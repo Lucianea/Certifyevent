@@ -61,7 +61,6 @@ cod=presenca$cod[i]
 				\bigskip
 			\end{center}
 
-
 \begin{center}
 				\begin{minipage}{0.8\textwidth}
 					{\Large Certificamos que \emph{`r name`}\ esteve presente no 
@@ -72,7 +71,7 @@ cod=presenca$cod[i]
 			
 			
 
-	\begin{center}
+\begin{center}
     	\vspace{1.2cm}
     	\begin{minipage}
 {\textwidth}
