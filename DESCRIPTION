@@ -6,7 +6,7 @@ Author: Luciane Alcoforado, Steven Ross
 Maintainer: Luciane Alcoforado <lucianea@id.uff.br>
 Description: Pacote para criacao de Modelo de Certificado
     Use four spaces when indenting paragraphs.
-Depends: R (>= 3.1.0), rmarkdown, knitr
+Depends: R (>= 3.5.0), rmarkdown, knitr, stringr
 License: CC BY
 Encoding: UTF-8
 LazyData: true
