@@ -8,4 +8,8 @@ Equipe de trabalho: Profa. Luciane Alcoforado/UFF e Prof. Steven Dutt Ross/UNIRI
 
 Início do projeto: agosto de 2018
 
+(o pacote devtools deve estar instalado)
+
+Copie o código abaixo e cole no seu R.
+
 devtools::install_github('Lucianea/Certifyevent')
