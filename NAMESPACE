@@ -1,1 +1,4 @@
 exportPattern("^[[:alpha:]]+")
+import(rmarkdown)
+import(knitr)
+importFrom(rmarkdown,render)
